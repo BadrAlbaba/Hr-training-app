@@ -738,4 +738,4 @@ app.get("/ai-reason", (req,res) =>{
 
 
 
-app.listen(3000);
+app.listen(procces.env.PORT || 3000);
