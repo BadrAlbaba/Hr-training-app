@@ -9,7 +9,7 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
 
     <!-- Css style -->
-    <link rel="stylesheet" href="/style.css">
+    <link rel="stylesheet" href="/choices.css">
 
     <!-- Googel Fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +18,8 @@
 
 </head>
 <body>
+
+    <a href="/" class="button go-home">Go Home</a>
 
     <!-- Home Section -->
 
@@ -34,24 +36,26 @@
                 <div class="buttons-div">
 
                     <div class="choices-div">
-                        <input type="radio" class="btn-check choices" name="frChoice" id="btnradio1" autocomplete="off">
-                        <label class="btn button first-button choice-button" for="btnradio1">Successfully hired employees at the company</label>
+                        <input type="radio" class="btn-check" name="frChoice" id="option1" autocomplete="off" checked>
+                        <label class="btn btn-secondary" for="option1">Successfully hired employees at the company</label>
+                    </div> 
+
+                    <div class="choices-div">
+                        <input type="radio" class="btn-check" name="scChoice" id="option2" autocomplete="off">
+                        <label class="btn btn-secondary" for="option2">Top 10% performers at the company</label>
                     </div>
 
                     <div class="choices-div">
-                        <input type="radio" class="btn-check choices" name="scChoice" id="btnradio2" autocomplete="off">
-                        <label class="btn button first-button choice-button" for="btnradio2">Top 10% performers at the company</label>
-                    </div>
+                        <input type="radio" class="btn-check" name="thrChoice" id="option3" autocomplete="off" >
+                        <label class="btn btn-secondary" for="option3">Similar “Product Manager” profiles in Netherlands</label>
 
-                    <div class="choices-div">
-                        <input type="radio" class="btn-check choices" name="thrChoice" id="btnradio3" autocomplete="off">
-                        <label class="btn button first-button choice-button" for="btnradio3">Similar “Product Manager” profiles in Netherlands</label>
                     </div>
 
                 </div>
 
+        
                 <div class="buttons-div">
-                    <button type="submit" class="button first-button"> Go </button>
+                    <button type="submit" class="button first-button"> To the next step </button>
                 </div>
                     
             

@@ -204,8 +204,6 @@ const applicantsDataSc =
         skills: "Agile, Software, Testing, Team leading, Analytical skills, Business skills"
     },
 
-    
-
     {
         id: 1,
         image: "Martijn",
@@ -217,7 +215,6 @@ const applicantsDataSc =
         degree: "Bachelors in Marketing",
         skills: "Market Research, Analytical Skills, Time Management, Communications, Presentation, Negotiation"
     },
-
 
     {
         id: 10,
@@ -242,8 +239,6 @@ const applicantsDataSc =
         degree: " Masters in Computer Science ",
         skills: "Software, Project Management, Leadership, Communications, Roadmaps, Negotiation"
     },
-
-    
 
     {
         id: 2,
@@ -270,6 +265,126 @@ const applicantsDataSc =
     },
 
 ];
+
+let frDataTraining = [
+    {
+        id: 3,
+        image: "Marijne",
+        name: "Marijne Kruse",
+        live: "Almere",
+        age: "26 Years",
+        nationality: "Dutch",
+        experience: "4 years in Product Mang",
+        degree: "Engineering Management",
+        skills: "Agile, Software, Testing, Team leading, Analytical skills, Business skills"
+    },
+    {
+        id: 4,
+        image: "Obinna",
+        name: "Obinna Iblo",
+        live: "Rotterdam",
+        age: "38 Years",
+        nationality: "Nigerian",
+        experience: "12 years in Software",
+        degree: " Computer Science",
+        skills: "Product, Software, Agile, Roadmaps, Team leading, Delegation"
+    },
+    {
+        id: 6,
+        image: "Bart",
+        name: "Bart van Dinter",
+        live: "Den Haag",
+        age: "51 Years",
+        nationality: "Dutch",
+        experience: "18 years in Software",
+        degree: " MBA/ Bach. Computer Science ",
+        skills: "Management, Leadership, Software, Story telling, Customer focus, Negotiation"
+    },
+]
+
+let scDataTraining = [
+    {
+        id: 1,
+        image: "Martijn",
+        name: "Martijn Klaver",
+        live: "Amesterdam",
+        age: "32 Years",
+        nationality: "Dutch",
+        experience: "8 years in Product Mang",
+        degree: "Bachelors in Marketing",
+        skills: "Market Research, Analytical Skills, Time Management, Communications, Presentation, Negotiation"
+    },
+    {
+        id: 9,
+        image: "Eliza",
+        name: "Eliza Van Oort",
+        live: "Rotterdam",
+        age: "36 Years",
+        nationality: "Dutch",
+        experience: "13 years in Software",
+        degree: " Msc in Computer Science",
+        skills: "Javascript, Automated Testing, HTML/CSS, Python, Technical management, Mobile Development"
+    },
+    {
+        id: 10,
+        image: "Asha",
+        name: "Asha Elvira",
+        live: "Amsterdam",
+        age: "38 Years",
+        nationality: "Dutch",
+        experience: "15 years in Project Mang.",
+        degree: " Bachelor in Engineering ",
+        skills: "Hardware, Engineering Management, Scrum, Presentation, Team leading, Project Management"
+    },
+]
+
+let thrDataTraining = [
+    {
+        id: 2,
+        image: "Sonya",
+        name: "Sonya Shee",
+        live: "Arnhem",
+        age: "28 Years",
+        nationality: "Indonesian",
+        experience: "5 years in Product Mang",
+        degree: "Business Management",
+        skills: "Strategy, Roadmaps, Leadership, research, Presentation, Project Management"
+    },
+    {
+        id: 5,
+        image: "Adil",
+        name: "Adil Omar",
+        live: "Amesterdam",
+        age: "48 Years",
+        nationality: "Moroccan",
+        experience: "26 years in Product Mang",
+        degree: " Bachelor in Mathematics",
+        skills: "Design, Roadmaps, Agile/Scrum, User focused, Data Analytics, Software"
+    },
+    {
+        id: 7,
+        image: "Emre",
+        name: "Emre Kaplan",
+        live: "Utrecht",
+        age: "34 Years",
+        nationality: "Turkish",
+        experience: "8 years in Product Mang",
+        degree: " Masters in Computer Science ",
+        skills: "Software, Project Management, Leadership, Communications, Roadmaps, Negotiation"
+    },
+]
+
+let frReason = [
+    "10+ years in Software Management", "between 32 and 55 years", "Bachelor in Computer Science"
+]
+
+let scReason = [
+    "Dutch Nationality", "30+ years", "Living in/around Amesterdam"
+]
+
+let thrReason = [
+    "Experience working as Product Mng", "skills: Roadmaps, Agile, Strategy", "B28 to 50 years age"
+]
 
 
 app.get("/", (req,res) =>{
@@ -522,12 +637,12 @@ app.post("/machine-learning-choices", (req,res) =>{
         res.redirect("train-dataset-qs");
     }
 
-    if(req.body.scChoice){
+    else if(req.body.scChoice){
         dataSetChoice = "Top 10% performers at the company";
         res.redirect("train-dataset-qs");
     }
 
-    if(req.body.thrChoice){
+    else if(req.body.thrChoice){
         dataSetChoice = "Similar “Product Manager” profiles in Netherlands";
         res.redirect("train-dataset-qs");
     }
@@ -545,6 +660,78 @@ app.get("/train-dataset-qs", (req,res) =>{
     });
 });
 
+app.get("/dataset-training", (req,res) =>{
+    res.render("dataset-training");
+});
+
+app.get("/ai-choices", (req,res) =>{
+    if (dataSetChoice == "Successfully hired employees at the company") {
+        res.render("ai-choices",{
+            data: frDataTraining
+        });
+    }
+
+    if (dataSetChoice == "Top 10% performers at the company") {
+        res.render("ai-choices",{
+            data: scDataTraining
+        });
+    }
+
+    if (dataSetChoice == "Similar “Product Manager” profiles in Netherlands") {
+        res.render("ai-choices",{
+            data: thrDataTraining
+        });
+    }
+    
+});
+
+app.get("/ai-and-my-choices", (req,res) =>{
+    if (dataSetChoice == "Successfully hired employees at the company") {
+        res.render("ai-and-my-choices",{
+            frChoice: firstChosenArr,
+            scChoice: secoundChosenArr,
+            aiChoices: frDataTraining
+        });
+    }
+
+    if (dataSetChoice == "Top 10% performers at the company") {
+        res.render("ai-and-my-choices",{
+            frChoice: firstChosenArr,
+            scChoice: secoundChosenArr,
+            aiChoices: scDataTraining
+        });
+    }
+
+    if (dataSetChoice == "Similar “Product Manager” profiles in Netherlands") {
+        res.render("ai-and-my-choices",{
+            frChoice: firstChosenArr,
+            scChoice: secoundChosenArr,
+            aiChoices: thrDataTraining
+        });
+    }
+    
+});
+
+app.get("/ai-reason", (req,res) =>{
+    if (dataSetChoice == "Successfully hired employees at the company") {
+        res.render("ai-reason",{
+            aiReason: frReason
+        });
+    }
+
+    if (dataSetChoice == "Top 10% performers at the company") {
+        res.render("ai-reason",{
+            aiReason: scReason
+        });
+    }
+
+    if (dataSetChoice == "Similar “Product Manager” profiles in Netherlands") {
+        res.render("ai-reason",{
+            aiReason: thrReason
+        });
+    }
+    
+});
 
 
 

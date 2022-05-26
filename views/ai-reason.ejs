@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Biased App</title>
+
+    <!-- Bootstrap -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous">
+
+    <!-- Css style -->
+    <link rel="stylesheet" href="/style.css">
+
+    <!-- Googel Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+    <a href="/" class="button go-home">Go Home</a>
+
+    <!-- Home Section -->
+
+    <section id="main" class="home">
+        <div class="container">
+
+            <h1>Our App</h1>
+            <hr style="border: 0; background-color: #E6695A; width: 50%; height: 4px; margin: auto; opacity: 80%;">
+            <h2 style="margin-top: 60px;"> How the Algorithm made such decision?
+            </h2>
+
+            <div class="row">
+                <div class="col-lg-9 align-self-start">
+                
+                    <img src="/img/robot-small.png" style="margin-top: 50px; border-radius: 30px; width: 400px;" alt="">
+                    <div class="reason-div">
+                        <p>Recent Successful Hires were of:</p><br>
+                        <% aiReason.forEach(element => { %>
+                            <p><%= element %> </p>
+                        <% });  %>
+                    </div>
+                    
+                </div>
+
+                <div class="col-lg-3">
+                    <div class="last-div">
+                        <p>If the data that was used to train the Algorithm is biased (demographics, gender, location,..)
+                            then the Machine learning will try replicate them.
+                            This can be shown clearly in the output of the Algorithm !
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="buttons-div">
+                <a href="/" class="button first-button"> Thank You </a>
+            </div>
+            
+
+        </div>
+    </section>
+
+
+    <!-- bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/js/bootstrap.bundle.min.js" integrity="sha384-pprn3073KE6tl6bjs2QrFaJGz5/SUsLqktiwsUTF55Jfv3qYSDhgCecCxMW52nD2" crossorigin="anonymous"></script>
+    
+    <!-- JQuery -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+    <!-- Js file -->
+    <script src="/index.js"></script>
+
+</body>
+</html>

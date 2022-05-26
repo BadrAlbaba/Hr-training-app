@@ -1,11 +1,12 @@
 var chosenCvs = [];
 
 $("input").click(function() {
+    
     var button = $(this);
     var buttonClass = button.attr("class");
-
-    if(buttonClass !== "button choose-card-button checked"){
-        $(this).addClass("checked");
+    console.log(buttonClass)
+    if(buttonClass !== "btn-check any"){
+        $(this).addClass("any");
         chosenCvs.push(1);
         console.log(chosenCvs);
         
@@ -16,9 +17,9 @@ $("input").click(function() {
             $(".chosen-more").removeClass("show");
         }
     }
-    if(buttonClass == "button choose-card-button checked"){
+    if(buttonClass == "btn-check any"){
         
-        $(this).removeClass("checked");
+        $(this).removeClass("any");
         chosenCvs.splice(0, 1);
         console.log(chosenCvs);
         if(chosenCvs.length <= 3 & $(".chosen-more").attr("class") == "chosen-more show"){

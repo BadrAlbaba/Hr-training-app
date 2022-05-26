@@ -81,7 +81,10 @@
                                 
                                 
                                 </div>   
-                                <input type="checkbox" name="<%= applicant.image %>" class="button choose-card-button"> <label class="choose-card-button" for="<%= applicant.image %>"> Choose </label>
+                                
+                                    <input type="checkbox" class="btn-check" name="<%= applicant.image %>" id="btn-check-<%= applicant.id %>" autocomplete="off" >
+                                    <label class="btn btn-primary" for="btn-check-<%= applicant.id %>">choose</label>
+                                
                             </div>
                         
                         <% });%>
