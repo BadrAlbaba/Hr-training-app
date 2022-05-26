@@ -631,18 +631,19 @@ app.get("/machine-learning-choices", (req,res) =>{
 
 
 app.post("/machine-learning-choices", (req,res) =>{
+    console.log(req.body);
     
-    if(req.body.frChoice){
+    if(req.body.frChoice == "on"){
         dataSetChoice = "Successfully hired employees at the company";
         res.redirect("train-dataset-qs");
     }
 
-    else if(req.body.scChoice){
+    else if(req.body.scChoice == "on"){
         dataSetChoice = "Top 10% performers at the company";
         res.redirect("train-dataset-qs");
     }
 
-    else if(req.body.thrChoice){
+    else if(req.body.thrChoice == "on"){
         dataSetChoice = "Similar “Product Manager” profiles in Netherlands";
         res.redirect("train-dataset-qs");
     }
