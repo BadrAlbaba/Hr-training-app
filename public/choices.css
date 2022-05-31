@@ -1,8 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Mulish:wght@500&display=swap');
+
 /* Global Styles */
 
 body{
     margin: 0 !important;
-    font-family: 'Koulen';
+    font-family: 'Mulish', sans-serif;
     position: relative;
 }
 
@@ -10,6 +12,19 @@ body{
 
 a{
     text-decoration: none;
+}
+
+
+h1{
+    font-family: 'Koulen';  
+}
+
+
+.logo{
+    top: 10px;
+    left: 20px;
+    position: absolute;
+    width: 100px;
 }
 
 .buttons-div{
@@ -165,7 +180,9 @@ a{
 }
 
 .show{
-    display: block !important;
+    display: inline-block !important;
+    position: absolute;
+    transition: ease-out 0.9s;
 }
 
 .btn-secondary{
@@ -176,6 +193,7 @@ a{
     width: 600px;
     padding: 20px 20px;
     font-size: 25px;
+    font-family: 'Koulen';
 }
 
 .btn-secondary:hover{
@@ -220,6 +238,25 @@ a{
     padding: 8%;
     background-color: #fff;
     border-radius: 20px;
+}
+
+.info-content-1, .info-content-2, .info-content-3{
+    display: none ;
+    background-color: #fff;
+    color: black;
+    padding: 2%;
+    transition: ease-out 0.9s;
+}
+
+.hover{
+    font-family: Arial, Helvetica, sans-serif;
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    padding: 10px;
+    text-decoration: none;
+    background-color: rgb(179, 179, 179);
+    border: 0;
 }
 
 

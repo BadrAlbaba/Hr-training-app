@@ -45,3 +45,23 @@ $(".choices3").click(function() {
     $(".choices2").val("off") 
 
 })
+
+$(".hover-1").hover(function() {
+    $(".info-content-1").addClass("show")
+ },function(){
+     $(".info-content-1").removeClass("show")
+ })
+
+
+$(".hover-2").hover(function() {
+    $(".info-content-2").addClass("show")
+ },function(){
+     $(".info-content-2").removeClass("show")
+ })
+
+
+$(".hover-3").hover(function() {
+    $(".info-content-3").addClass("show") 
+ },function(){
+     $(".info-content-3").removeClass("show")
+ })

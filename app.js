@@ -378,20 +378,36 @@ let frReason = [
     "10+ years in Software Management", "between 32 and 55 years", "Bachelor in Computer Science"
 ]
 
+let frVideo = "https://drive.google.com/file/d/1oMQ7PgSBa5USdf7UWAdkaKEnQaATTGxj/preview"
+
 let scReason = [
-    "Dutch Nationality", "30+ years", "Living in/around Amesterdam"
+    "Dutch Nationality", "30+ years", "Living in Rotterdam or Amesterdam"
 ]
+
+let scVideo = "https://drive.google.com/file/d/1fPOP7wY5WkfHkej-Bn-xmrKKMRynr0tm/preview"
 
 let thrReason = [
     "Experience working as Product Mng", "skills: Roadmaps, Agile, Strategy", "B28 to 50 years age"
 ]
+
+let thrVideo = "https://drive.google.com/file/d/13DOy5DdpwheJJ4bhFGLr4LeOhpmnIkQX/preview"
+
 
 
 app.get("/", (req,res) =>{
     compareArr =[];
     firstChosenArr = [];
     secoundChosenArr = [];
+    dataSetChoice = "";
     res.render("home");
+});
+
+app.get("/intro-manager", (req,res) =>{
+    compareArr =[];
+    firstChosenArr = [];
+    secoundChosenArr = [];
+    dataSetChoice = "";
+    res.render("intro-manager");
 });
 
 app.get("/choose-cvs-first", (req,res) =>{
@@ -716,25 +732,31 @@ app.get("/ai-and-my-choices", (req,res) =>{
 app.get("/ai-reason", (req,res) =>{
     if (dataSetChoice == "Successfully hired employees at the company") {
         res.render("ai-reason",{
-            aiReason: frReason
+            aiReason: frReason,
+            video: frVideo
         });
     }
 
     if (dataSetChoice == "Top 10% performers at the company") {
         res.render("ai-reason",{
-            aiReason: scReason
+            aiReason: scReason,
+            video: scVideo
         });
     }
 
     if (dataSetChoice == "Similar “Product Manager” profiles in Netherlands") {
         res.render("ai-reason",{
-            aiReason: thrReason
+            aiReason: thrReason,
+            video: thrVideo
         });
     }
     
 });
 
 
+app.get("/conclusion", (req,res) =>{
+    res.render("conclusion");
+});
 
 
 
