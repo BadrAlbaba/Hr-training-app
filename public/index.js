@@ -65,3 +65,4 @@ $(".hover-3").hover(function() {
  },function(){
      $(".info-content-3").removeClass("show")
  })
+

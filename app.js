@@ -754,6 +754,21 @@ app.get("/ai-reason", (req,res) =>{
 });
 
 
+app.get("/summary", (req,res) =>{
+    res.render("summary");
+});
+
+
+app.get("/summary-2", (req,res) =>{
+    res.render("summary-2");
+});
+
+
+app.get("/face-detection", (req,res) =>{
+    res.render("face-detection");
+});
+
+
 app.get("/conclusion", (req,res) =>{
     res.render("conclusion");
 });
