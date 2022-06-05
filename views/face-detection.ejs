@@ -17,6 +17,7 @@
     }
 
     .button{
+        margin-top: 150px;
         border: 2px solid #E6695A;
         background-color:#E6695A;
         padding: 5px 40px;
@@ -29,16 +30,15 @@
     }
 
     .container{
-        position: absolute;
-        top: 30px;
+        position: fixed;
+        top: -120px;
     }
 
-
-.first-button:hover {
-    color: #E6695A;
-    background-color: #ffeeee;
-    transition: ease-out 0.9s;
-}
+    .first-button:hover {
+        color: #E6695A;
+        background-color: #ffeeee;
+        transition: ease-out 0.9s;
+    }
 
     canvas {
       position: absolute;
@@ -50,10 +50,11 @@
     <video id="video" width="720" height="560" autoplay muted></video>
 
     <div class="container"> 
+        <a href="/conclusion" class="button first-button">Next</a>
         <p><span>Your age is:</span> <span id="age"></span> </p>
         <p><span>Your gender is:</span> <span id="gender"></span> </p>
-        <a href="/conclusion" class="button first-button">Next</a>
     </div>
+
 
     
 
